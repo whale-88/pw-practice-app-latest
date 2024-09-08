@@ -37,3 +37,9 @@ test('parametrized methods', async({page}) => {
     await pm.onDatePickerPage().selectCommonDatePickerDateFromToday(100)
     await pm.onDatePickerPage().selectDatePickerWithRangeFromToday(1, 14)
 })
+
+test.only('testing with ci', async({page}) => {
+    const pm = new PageManager(page)
+    await pm.navigateTo().formLayoutsPage()
+    await pm.navigateTo().datepickerPage()
+})
